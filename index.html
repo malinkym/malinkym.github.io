@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сайт-визитка — Хамматова Алина</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: #222;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+#home {
+    background: linear-gradient(120deg, #00c3ff, #ffff1c);
+}
+
+.block {
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 60px 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, button {
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    background: #00c3ff;
+    color: white;
+    border: none;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#home">Главная</a>
+    <a href="#about">Обо мне</a>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#contacts">Контакты</a>
+</nav>
+
+<section id="home">
+    <h1>Хамматова Алина</h1>
+    <p>Сайт-визитка студентки группы М531.</p>
+</section>
+
+<section id="about" class="block">
+    <h2>Обо мне</h2>
+    <p>
+        Я изучаю веб-разработку и создаю простые и удобные сайты.
+        В проектах уделяю внимание адаптивности, структуре и удобству использования.
+        Этот сайт создан как учебное задание и демонстрирует базовые навыки
+        верстки, работы с формами и навигацией.
+    </p>
+</section>
+
+<section id="portfolio" class="block">
+    <h2>Портфолио</h2>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/400x300" alt="Работа 1">
+        <img src="https://via.placeholder.com/400x300" alt="Работа 2">
+        <img src="https://via.placeholder.com/400x300" alt="Работа 3">
+    </div>
+</section>
+
+<section id="contacts" class="block">
+    <h2>Контакты</h2>
+
+    <form id="contactForm">
+        <input type="text" placeholder="Имя" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea placeholder="Сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <p>
+        Телефон:
+        <a href="tel:+79126295181">+7 912 629 51 81</a>
+    </p>
+    <p>
+        Email:
+        <a href="mailto:khammatovaaalina@gmail.com">
+            khammatovaaalina@gmail.com
+        </a>
+    </p>
+
+    <div style="margin-top:20px;">
+        <!-- Сюда можно вставить карту -->
+        <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aexample"
+            width="100%"
+            height="300"
+            frameborder="0">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Хамматова Алина</p>
+    <p>
+        <a href="#">VK</a> |
+        <a href="#">Telegram</a>
+    </p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    const email = document.getElementById("email").value;
+
+    if (!email.includes("@")) {
+        alert("Введите корректный email");
+        e.preventDefault();
+    } else {
+        alert("Форма отправлена (демо)");
+        e.preventDefault();
+    }
+});
+</script>
+
+</body>
+</html>
